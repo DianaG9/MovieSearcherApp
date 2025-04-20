@@ -1,0 +1,30 @@
+@use 'movies' as *;
+@use 'catalog' as *;
+@use 'footer' as *;
+
+body{
+    font-family: system-ui;
+}
+
+.page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+

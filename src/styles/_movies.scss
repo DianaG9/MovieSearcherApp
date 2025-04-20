@@ -1,0 +1,16 @@
+.movies{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    h1, h2, h3, p{
+        padding: 0;
+    }
+
+    img{
+        border-radius: 8px;
+        margin-top: 16pxx;
+    }
+
+}
