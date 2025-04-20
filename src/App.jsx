@@ -65,7 +65,7 @@ const handleChange = (event) => {
           <Movies movies={movies} />
         </main>
       </div>
-      <Footer /> 
+      {/* <Footer />  */}
     </>
   )
 }
