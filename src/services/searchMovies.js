@@ -6,7 +6,6 @@ export const searchMovies = async ({search}) => {
     try {
         const response = await fetch(`http://www.omdbapi.com/?apikey=${apiKey}&s=${search}`)
         const json = await response.json()
-   
         const movies = json.Search
 
         return movies?.map(movie => ({
@@ -15,10 +14,9 @@ export const searchMovies = async ({search}) => {
             year: movie.Year,
             type: movie.Type,
             poster: movie.Poster
-        } ))
+        }))
         
     } catch (e) {
-            throw new Error('Error searching movies')
-        }
-   
+        throw new Error('Error searching movies')
+    }  
 }

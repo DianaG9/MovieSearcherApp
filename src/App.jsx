@@ -1,5 +1,5 @@
-import { useEffect, useState, useRef} from 'react'
 import './styles/_app.scss'
+import { useEffect, useState, useRef} from 'react'
 import { useMovies } from './hooks/useMovies'
 import { Movies } from './components/Movies'
 import Footer from './components/Footer'
@@ -35,7 +35,7 @@ function useSearch(){
 function App() {
 
 const {search, updateSearch, error} = useSearch()
-const {movies, getMovies} = useMovies({search})
+const {movies, getMovies, loading} = useMovies({search})
 
 const handleSubmit = (event) => {
   event.preventDefault()
@@ -49,8 +49,9 @@ const handleChange = (event) => {
   return (
     <>
       <div className="page">
-        <h1>Movies App</h1>
+
         <header>
+        <h1>Movies App</h1>
           <form className="form" onSubmit={handleSubmit}>
             <input
             style={ {
@@ -60,9 +61,10 @@ const handleChange = (event) => {
             onChange={handleChange} value={search} name="query" placeholder='Harry Potter, Avengers, Star Wars...'/>
             <button type="submit">Search</button>
           </form>
+          {error && <p style={{color:'red'}}>{error} </p> }
         </header>
         <main>
-          <Movies movies={movies} />
+          {loading ? <p>Loading...</p> : <Movies movies={movies} />}
         </main>
       </div>
       {/* <Footer />  */}
